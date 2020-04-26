@@ -53,7 +53,7 @@ public class Taxi extends AppCompatActivity {
                 jsonParseNumber(position);
                 }
             });
-        }
+    }
 
 
     private void jsonParse() {

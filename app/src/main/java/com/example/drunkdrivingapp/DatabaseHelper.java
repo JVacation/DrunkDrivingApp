@@ -84,9 +84,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void removeDriver(String reg){
+    public boolean removeDriver(String reg){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete("driver","vehicleRegistration=?",new String[]{reg});
+        long ins = db.delete("driver","vehicleRegistration=?",new String[]{reg});
+        if(ins==-1) return false;
+        else return true;
     }
 
     public void updatePassword(String email, String password){
