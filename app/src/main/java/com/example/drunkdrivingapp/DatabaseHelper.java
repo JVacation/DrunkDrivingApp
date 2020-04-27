@@ -87,7 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean removeDriver(String reg){
         SQLiteDatabase db = this.getWritableDatabase();
         long ins = db.delete("driver","vehicleRegistration=?",new String[]{reg});
-        if(ins==-1) return false;
+        if(ins<=0) return false;
         else return true;
     }
 
